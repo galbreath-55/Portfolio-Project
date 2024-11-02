@@ -3,6 +3,7 @@ import components.queue.Queue;
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
 import components.simplewriter.SimpleWriter;
+import components.simplewriter.SimpleWriter1L;
 
 public class UserStorage {
 
@@ -73,7 +74,7 @@ public class UserStorage {
      */
     public final User removeUser(String username) {
         int i = 0;
-        while(!this.storage.entry(i).username.equals(username) && i!= this.storage.length()){
+        while(!this.storage.entry(i).username.equals(username) && i< this.storage.length()-1){
             i++;
         }
         User removedEntry = this.storage.remove(i);
@@ -154,6 +155,20 @@ public class UserStorage {
             tempData.enqueue(dataString);
         }
         tempUser.data.transferFrom(tempData);
+        this.storage.add(this.size(),tempUser);
      }
 
+     public static void main(String[] args) {
+        UserStorage accountHolder = new UserStorage();
+        accountHolder.newUser("galbreath.55","password123");
+        accountHolder.newUser("newGalbreath.55","password1234");
+        accountHolder.enterData("galbreath.55","Birthday","2/2/05");
+        accountHolder.enterData("newGalbreath.55","Address","123 Example Road, Columbus OH");
+
+        SimpleWriter out = new SimpleWriter1L();
+        accountHolder.printUser("galbreath.55", out);
+        out.println("");
+        accountHolder.mergeUser("galbreath.55","newGalbreath.55");
+        accountHolder.printUser("galbreath.55",out);
+     }
 }
