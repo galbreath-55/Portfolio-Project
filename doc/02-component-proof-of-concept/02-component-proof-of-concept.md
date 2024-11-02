@@ -1,12 +1,10 @@
 # Portfolio Part 2: Component Proof-of-Concept
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Evan Galbreath
+- **Dot Number**: galbreath.55
+- **Due Date**: 1-/3/2024
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 Previously, you brainstormed three ideas, and hopefully you got some feedback as
 well. However, it's impossible to know how reasonable your design actually is
@@ -30,7 +28,6 @@ the more work you can put in now, the better.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -68,7 +65,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -108,6 +104,33 @@ do good work.
 
 <!-- TODO: briefly argue your choice of design or design something
 new; then delete this comment -->
+My final choice of design is to move forward with a modified version of the gameReviewer component I had thought of previously, focusing on the user database aspect. I decided to move forward with this component because it seems like the most attainable option given the time and technical restraints for this assignment. Additionally it most closely relates to my future career interests as I hope to go into cybersecurity. While certainly a far cry from any real form of secure user storage, this presents a good way to familiarize myself with the concepts. I plan to name the class userStorage. Kernel functions include: 
+
+- void newUser(String username, String password)
+This method creates a new entry in the database with the desired username and password. The User will by default have no data entered.
+- User removeUser(String username)
+This method removes a user of the desired username and password and returns an error if no such entry is found.
+- int size()
+This returns the number of total users stored.
+
+The secondary methods include:
+- boolean login(String username, String password)
+Returns true if a username is found for the entered username and password, and false otherwise.
+- void mergeAccount(String user1, String user2)
+"Merges" two accounts by concatenating user2.data to user1.data and then deleting user2.
+- void enterData(String username, String dataHeader, String dataDesc)
+Adds a new data entry to the user under the entered username in the format, "dataHeader: dataDesc\n"\
+- void printUser(String, username, Simplewriter out)
+This will output all user information including username, password, and data, into out in a formatted layout.
+
+This component utilizes a custom data type User with the following properties.
+
+private final class User {
+        private Queue<String> data;
+        private String username;
+        private String password;
+    }
+
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
@@ -118,7 +141,6 @@ new; then delete this comment -->
 > we'll want a branch that you can later make a pull request from with all
 > your changes.
 
-<!-- TODO: make a new branch from main then delete this comment -->
 
 ## Assignment Tasks
 

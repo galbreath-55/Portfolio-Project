@@ -70,3 +70,17 @@ the following form: YYYY.0M.0D.
 [unreleased]: https://github.com/jrg94/portfolio-project/compare/v2024.08.07...HEAD
 [2024.08.07]: https://github.com/jrg94/portfolio-project/compare/v2024.01.07...v2024.08.07
 [2024.01.07]: https://github.com/jrg94/portfolio-project/releases/tag/v2024.01.07
+
+## [2024.09.17]
+
+### Added
+- Designed a GameReviewer component
+- Designed a CarModel component
+- Designed a FitnessTracker component
+
+## [2024.11.01]
+
+### Added
+- Redesigned GameReviewer to UserStorage
+- Developed proof of concept for GameReviewer
+- uploaded components.jar to /lib

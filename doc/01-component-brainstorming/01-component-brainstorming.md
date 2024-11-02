@@ -1,12 +1,11 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Evan Galbreath
+- **Dot Number**: galbreath.55
+- **Due Date**: 9/16/2024
 
 ## Assignment Overview
 
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,7 +28,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -52,7 +50,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
 
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
@@ -67,7 +64,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -98,15 +94,9 @@ do good work.
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
 
+As far as career goals, I have always been fascinated by the idea of cybersecurity, and hope to one day go into the field myself. I am additionally getting a minor in forensic science because the field is personally interesting to me. As for hobbies, my free time mostly consists of playing multiplayer games with friends, I am an avid music listener, and occasionally I will read a book.
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
@@ -192,70 +182,86 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: GameReviewer
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component would model user data specifically for a game review website.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addUser(String username, String password) - creates a new entry in this, giving it the entered username and password, and null in each other variable for the User class.
+    - User remove(String username, String password) - removes a user of the given username and password, if a user with the given does not exist in this, it will print an error, and returns that users information if it does.
+    - User removeAny() - removes a random user in this.
+    - int size() - Reports size of this.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - boolean login(String username, String password) - returns true if there exists an entry with the given username and password, and returns false otherwise.
+    - void addGame(String username) - adds a new game to the User class of the given username.
+    - reviewGame
+    - void allReviews(String username) -
+    - String gameReviews(String gameName) - returns all saved reviews for the given game, including the username of the reviewer, and their rating of the game.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would be mutable as the data structure would be changed with almost every function call.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - A key aspect of the data structure would be that it is built on a Set of a custom class "User", which would act to store the String "username", String "password", Sequence of type String for "reviewed games", Sequence of type String for "reviews", and Set of type String "saved for later games".
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - While the component would not need any additional enums or constants, it would require a custom data type called "User" to act as storage for each particular users information.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, for example, the function gameReviewer.login("username","password"), would simply remove the user whos username matches the entered key of "username", and return true if the password matches, and false if it does not. Then it would add the user back into the datastructure.
 
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: carModel
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component will model various traits of a car that the user wishes to model so they can conveniently track it's movement over a desired time and distance. The user can change variables such as speed and acceleration, then change time and see what the car's position is.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void setSpeed(double speed) - sets the current speed of this to speed in miles per hour.
+    - void setDistance(double distance) - sets the given distance of this to distance, in miles.
+    - void setAcceleration(double acceleration) - sets the current acceleration of this to the double acceleration, in miles per hour per second.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void reset() - sets all variables to 0.
+    - void changeTime(double time) - advances the time by the given amount in minutes. The distance will change accordingly, by adding originalDistance + time*speed + 1/2*acceleration*time^2.
+    - String display() - returns the current dashboard display of this, including speed, acceleration, distance traveled, and current time.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, because each variable of the model changes with any given period of time.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - The component should not rely on any internal classes.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - There should not be any constants or enums.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, changeTime, would use the setSpeed and setDistance functions to change the car's current state after the given amount of time has passed, by calling setSpeed and setDistance after using their original values.
 
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: FitnessTracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - Tracks data related to a single workout.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void clearWorkout() - removes all current excercises.
+    - void addExcercise(String excercise) - adds an excercise to the workout data structure (Map(String,Queue<Integer>)).
+    - void addSet(String excercise, int reps) - adds a new int equal to reps to the queue corresponding to a Map.Pair with key=excercise.
+    - Map.Pair<String, Queue<Integer>> removeExcercise(String excercise) - removes the given excercise from the workout Map.
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void changeExcercise(String oldExcercise, String newExcercise) - removes the old workout, and adds the new one, settings it's set queue to be equal to the oldExcercise
+    - void resetSets(String excercise) - clears the given workouts set Queue.
+    - String workoutOverview() - returns each excercise, set and rep count in a formatted string.
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - This component would be mutable to allow changes to be made to the workout
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It would use Map to store the excercise type as a key, and a Queue of ints to store the number of reps in each set, with each set being 1 entry
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - The component would not need any enums or constants.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - The secondary methods can be implemented using the kernel methods. For example, changeExcercise would be simply removing the excercise of the given string, and then adding a new workout with the new excercises name, and then re-adding the sets that existed in the previous workout type.
 
 ## Post-Assignment
 
@@ -286,9 +292,9 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a GameReviewer component
+- Designed a CarModel component
+- Designed a FitnessTracker component
 ```
 
 Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
@@ -303,7 +309,7 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
+
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -313,11 +319,9 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
