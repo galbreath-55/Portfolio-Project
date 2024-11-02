@@ -5,7 +5,7 @@ import components.sequence.Sequence1L;
 import components.simplewriter.SimpleWriter;
 import components.simplewriter.SimpleWriter1L;
 
-public class UserStorage {
+public class ProofOfConcept {
 
     /**
      * User class for tracking information.
@@ -41,7 +41,7 @@ public class UserStorage {
     /**
      * Standard no argument constructor.
      */
-    public UserStorage(){
+    public ProofOfConcept(){
         this.createNewRep();
     }
 
@@ -159,7 +159,7 @@ public class UserStorage {
      }
 
      public static void main(String[] args) {
-        UserStorage accountHolder = new UserStorage();
+        ProofOfConcept accountHolder = new ProofOfConcept();
         accountHolder.newUser("galbreath.55","password123");
         accountHolder.newUser("newGalbreath.55","password1234");
         accountHolder.enterData("galbreath.55","Birthday","2/2/05");
