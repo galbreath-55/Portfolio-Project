@@ -84,3 +84,13 @@ the following form: YYYY.0M.0D.
 - Redesigned GameReviewer to UserStorage
 - Developed proof of concept for GameReviewer
 - uploaded components.jar to /lib
+
+## 2024.11.02
+
+### Added
+
+- Designed kernel and enhanced interfaces for UserStorage component
+
+### Updated
+
+- Changed design to include a function called int userIndex(String username), which returns the index of the user as it is in the sequence.

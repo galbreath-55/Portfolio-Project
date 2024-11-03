@@ -142,7 +142,6 @@ public class ProofOfConcept {
      * @param username
      * @param out
      */
-
      public final void printUser(String username, SimpleWriter out){
         User tempUser = this.removeUser(username);
         out.println("Username: " + tempUser.username);
