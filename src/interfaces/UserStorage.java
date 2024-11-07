@@ -7,6 +7,7 @@ import components.simplewriter.SimpleWriter;
  */
 public interface UserStorage extends UserStorageKernel{
 
+    
     /**
      * returns true if @param username and @param password exists in this.storage.
      * @param username the desired username of the user to be logged in
