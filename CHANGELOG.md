@@ -84,3 +84,26 @@ the following form: YYYY.0M.0D.
 - Redesigned GameReviewer to UserStorage
 - Developed proof of concept for GameReviewer
 - uploaded components.jar to /lib
+
+## 2024.11.02
+
+### Added
+
+- Designed kernel and enhanced interfaces for UserStorage component
+
+### Updated
+
+- Changed design to include a function called int userIndex(String username), which returns the index of the user as it is in the sequence.
+
+
+## 2024.11.07
+
+### Added
+- Created UserStorage abstract class UserStorageSecondary
+- Implementations for secondary methods of UserStorage
+
+
+### Updated
+- Removed userIndex as it's only real application would be in kernel methods, which due to the kernel purity rule cannot be used.
+- Updated design of the User subclass, creating a java record type inside of UserStorageKernel.
+- Moved the sequence of users "storage" into the UserStorageKernel so that it can be used by anything inheriting from the kernel for clarity purposes.
