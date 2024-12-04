@@ -107,3 +107,14 @@ the following form: YYYY.0M.0D.
 - Removed userIndex as it's only real application would be in kernel methods, which due to the kernel purity rule cannot be used.
 - Updated design of the User subclass, creating a java record type inside of UserStorageKernel.
 - Moved the sequence of users "storage" into the UserStorageKernel so that it can be used by anything inheriting from the kernel for clarity purposes.
+
+## 2024.12.2
+
+### Added
+
+- UserStorage1L.java was created and the method bodies for all kernel methods as well as those inherited from standard: transferFrom, newInstance, and clear
+
+### Updated
+
+- alternate newUser Kernel function using parameter (User account)
+- created removeAny() kernel function.

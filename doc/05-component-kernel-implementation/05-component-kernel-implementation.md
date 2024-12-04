@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Evan Galbreath
+- **Dot Number**: galbreath.55
+- **Due Date**: 11/15/2024
 
 ## Assignment Overview
 
@@ -112,7 +112,7 @@ do good work.
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+The representation component of the kernel methods has already been created. No further representation should be required besides the "User" record class as well as Sequence "Storage" that is also contained in the kernel methods.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -174,7 +174,7 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed kernel implementation for <!-- insert name of component here --> component
+- Designed kernel implementation for UserStorage component
 
 ### Updated
 
