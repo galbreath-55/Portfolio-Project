@@ -5,10 +5,6 @@ import components.simplewriter.SimpleWriter;
 import interfaces.UserStorage;
 
 public abstract class UserStorageSecondary implements UserStorage{
- 
-    /*
-     * public members -----------------------------------------------
-    */
 
 
     /*
@@ -20,8 +16,8 @@ public abstract class UserStorageSecondary implements UserStorage{
         String result = "";
         if(storage.length()!=0){
         for(int i = 0; i< storage.length();i++) {
-            result+="Username: " + storage.entry(i).username() + "/n";
-            result += "Password: " + storage.entry(i).password() + "/n";
+            result+="Username: " + storage.entry(i).username() + "\n";
+            result += "Password: " + storage.entry(i).password() + "\n";
             if(storage.entry(i).data().length() >0) {
                 result+="Data: " + storage.entry(i).data().toString();
             }

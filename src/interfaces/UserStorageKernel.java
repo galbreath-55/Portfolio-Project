@@ -13,8 +13,7 @@ public interface UserStorageKernel extends Standard<UserStorage> {
      */
     record User(String username,String password,Queue<String> data){}
 
-        Sequence<User> storage = new Sequence1L<User>();
-
+    Sequence<User> storage = new Sequence1L<User>();
 
      /**
      * primary database structure.
@@ -29,6 +28,14 @@ public interface UserStorageKernel extends Standard<UserStorage> {
     void newUser(String username, String password);
 
     /**
+     * adds a user of @param username, and @param password
+     * @param account The account to be added
+     * @ensures this = #this + new user
+     * @requires user of account.username() does not already exist in #this
+     */
+    void newUser(User account);
+
+    /**
      * removes a user of given username and returns it.
      * @param username The username of the account to return
      * @return the User of the given username that was removed.
@@ -36,6 +43,12 @@ public interface UserStorageKernel extends Standard<UserStorage> {
      * @requires user of @param username exists in #this
      */
     User removeUser(String username);
+
+    /**
+     * @return a random user
+     * @requires |this| >= 1
+     */
+    User removeAny();
 
     /**
      * returns the number of stored users.
