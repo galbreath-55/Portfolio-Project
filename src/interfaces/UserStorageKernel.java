@@ -1,8 +1,8 @@
 package interfaces;
+import components.standard.Standard;
+import components.queue.Queue;
 import components.sequence.Sequence;
 import components.sequence.Sequence1L;
-import components.queue.Queue;
-import components.standard.Standard;
 
 /**
  * User storage kernel with primary methods.
@@ -11,17 +11,13 @@ public interface UserStorageKernel extends Standard<UserStorage> {
     /**
      * User class for tracking information.
      */
-    public final class User {
-        String username;
-        String password;
-        Queue<String> data;
-    }
+    record User(String username,String password,Queue<String> data){}
+
+    Sequence<User> storage = new Sequence1L<User>();
 
      /**
      * primary database structure.
      */
-    Sequence<User> storage = new Sequence1L<User>();
-
     /**
      * adds a user of @param username, and @param password
      * @param username - the desired new username.
@@ -32,8 +28,16 @@ public interface UserStorageKernel extends Standard<UserStorage> {
     void newUser(String username, String password);
 
     /**
+     * adds a user of @param username, and @param password
+     * @param account The account to be added
+     * @ensures this = #this + new user
+     * @requires user of account.username() does not already exist in #this
+     */
+    void newUser(User account);
+
+    /**
      * removes a user of given username and returns it.
-     * @param username The username of the account to be removed
+     * @param username The username of the account to return
      * @return the User of the given username that was removed.
      * @ensures this = #this - removed user
      * @requires user of @param username exists in #this
@@ -41,18 +45,15 @@ public interface UserStorageKernel extends Standard<UserStorage> {
     User removeUser(String username);
 
     /**
+     * @return a random user
+     * @requires |this| >= 1
+     */
+    User removeAny();
+
+    /**
      * returns the number of stored users.
      * @return number of users in storage.
      * @ensures this = #this
      */
     int size();
-
-    /**
-     * Finds the index of the username of @param username.
-     * @param username The username of the account that should be returned.
-     * @return the index of the user in the storage sequence.
-     * @ensures this = #this
-     * @requires user of @param username exists in #this
-     */
-    int userIndex(String username);
 }
